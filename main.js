@@ -5,7 +5,7 @@
 var express         = require('express');
 var app             = express();
 var bodyParser      = require('body-parser');
-var mongoose        = require('mongoose');
+//var mongoose        = require('mongoose');
 var morgan          = require('morgan');
 
 
@@ -14,7 +14,7 @@ var config = require('./config');
 var Bear            = require('./models/bear');
 var User            = require('./models/user');
 
-mongoose.connect(config.database); // connect to database
+//mongoose.connect(config.database); // connect to database
 
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
