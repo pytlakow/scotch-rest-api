@@ -7,7 +7,7 @@ var app             = express();
 var bodyParser      = require('body-parser');
 var mongoose        = require('mongoose');
 var morgan          = require('morgan');
-var jwt             = require('jsonwebtoken');
+
 
 var config = require('./config');
 
@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
-var port            = process.env.POST || 8080;
+
 
 
 //ROUTES
@@ -104,5 +104,6 @@ router.get('/', function(req, res){
 app.use('/api', router);
 
 //START SERVER
-app.listen(port);
-console.log('Magic happens at port: ' + port);
+app.listen(process.env.PORT || 5000);
+//app.listen(port);
+//console.log('Magic happens at port: ' + process.env.PORT || 5000);
